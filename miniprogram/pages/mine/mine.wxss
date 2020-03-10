@@ -1,0 +1,105 @@
+/* pages/mine/mine.wxss */
+.topBox{
+  height: 500rpx;
+  background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+  display: flex;
+  flex-direction: column;
+}
+.text06{
+  margin-left: 50rpx;
+  font-size: 35rpx;
+  color: white;
+  font-weight: bold;
+}
+.imageBox{
+  height: 100rpx;
+  width: 100rpx;
+  padding: 10rpx;
+  border-radius: 50%;
+  margin:50rpx 315rpx 30rpx 315rpx;
+  background-color: white;
+  overflow: hidden;
+}
+.imageStyle{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.nicknameBox{
+  width: 750rpx;
+  align-items: center;
+}
+.text01{
+  text-align: center;
+  font-size: 35rpx;
+  color: white;
+}
+.label01{
+  border: solid 2rpx white;
+  border-radius: 30rpx;
+}
+.tagBox{
+  margin: 50rpx 0rpx 20rpx 0rpx;
+  padding-left: 75rpx;
+  display: flex;
+}
+.tag{
+  width:150rpx;
+  margin-right: 75rpx;
+  text-align: center;
+  color: white;
+  
+}
+.line{
+  margin:15rpx 50rpx 0rpx 50rpx;
+  width:50rpx;
+  height:10rpx;
+  background: #ffffff;
+}
+.line2{
+  margin:15rpx 50rpx 0rpx 50rpx;
+  width:50rpx;
+  height:5rpx;
+  background: #8398AA;
+}
+.text02{
+  background-color: rgb(228, 226, 226);
+  color: black;
+  padding: 10rpx 50rpx;
+  font-size: 30rpx;
+}
+.addType{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: #8398AA;
+  color: white;
+  font-weight: bold;
+
+  padding: 20rpx;
+  margin:50rpx 50rpx 30rpx 610rpx;
+  overflow: hidden;
+}
+.text03{
+  font-size: 30rpx;
+  text-align: right;
+}
+.text04{
+  font-size: 25rpx;
+  color: gainsboro;
+  margin:100rpx 0rpx;
+  text-align: center;
+}
+.text05{
+  border: 2rpx solid white;
+  width: 200rpx;
+  color: white;
+  line-height: 1.7;
+  font-size: 35rpx;
+}
+.button01{
+  border: 2rpx solid white;
+  padding: 0rpx 10rpx;
+  margin: 0rpx 10rpx;
+  font-size: 25rpx;
+}

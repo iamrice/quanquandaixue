@@ -1,0 +1,62 @@
+<!--pages/register/register.wxml-->
+<view>
+
+  <view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+    <view class="text07" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">学生认证</view>
+  </view>
+
+  <swiper current="{{swiperDot_2}}" vertical="true" style="height:{{windowHeight-(topBarHeight+90/px2rpx)}}px;">
+    <swiper-item catchtouchmove='catchTouchMove'>
+      <view class="Box01" style="margin-top:{{windowHeight*px2rpx/2-350}}rpx">
+        <text class="text01">✉ 邮箱</text>
+        <view class="codeBox.shadow">
+          <input class="inputBox03" bindinput="bindinput" id="address"></input>
+          <view class="addressPostfix">@mail.scut.edu.cn</view>
+        </view>
+        <view class="text05" style="color:red;">{{addressTip}}</view>
+        <view class="text05" bindtap="tipClicked">没有华工邮箱？</view>
+        <view class="text06" bindtap="tipClicked" wx:if="{{tipExpand}}">尊敬的用户，为确保平台交易的安全性，本平台目前只支持华工在校学生注册。
+          <text style="color:rgb(131, 152, 170);">若在校学生没有华工邮箱，请访问"http://stuemail.scut.edu.cn/"，点击“立即激活”，即可激活自己的邮箱。</text>如若有其他问题，请在小程序后台留言，我们会尽快回复。</view>
+
+        <text class="text01" type='number'>🗝 验证码</text>
+        <view class="codeBox">
+          <input class="inputBox02" id="register" bindinput="codeInput"></input>
+          <button class="confirm" style="background:{{countDown?'gainsboro':''}}" bindtap="{{countDown?'':'sendCode'}}">{{countDown?countDown:'发送验证码'}}</button>
+        </view>
+
+        <view class="text05" style="color:{{codeTipColor}};">{{codeTip}}</view>
+      </view>
+    </swiper-item>
+    <!--swiper-item catchtouchmove='catchTouchMove'>
+      <view class="Box01" style="margin-top:{{windowHeight*px2rpx/2-350}}rpx">
+        <text class="text01">设置密码</text>
+        <input password="true" class="inputBox" bindinput="bindinput" id="passcode"></input>
+
+        <text class="text01">确认密码</text>
+        <input password="true" class="inputBox" bindinput="confirmPasscode" id="confirmPasscode"></input>
+        <view class="text05" style="color:red;">{{passcodeTip}}</view>
+
+        <button class="login" bindtap="nextStep">下一步</button>
+      </view>
+    </swiper-item-->
+    <swiper-item catchtouchmove='catchTouchMove'>
+      <view class="Box01" style="margin-top:{{(windowHeight*px2rpx/2-500)>0?(windowHeight*px2rpx/2-500):0}}rpx">
+        <text class="text01">😀 真实姓名</text>
+        <input class="inputBox" bindinput="bindinput" id="name"></input>
+
+        <text class="text01">📱 电话号码</text>
+        <input class="inputBox" bindinput="bindinput" id="phoneNumber"></input>
+
+        <text class="text01">👀 年级</text>
+        <input class="inputBox" bindinput="bindinput" id="grade"></input>
+
+        <text class="text01">📚 专业</text>
+        <input class="inputBox" bindinput="bindinput" id="major"></input>
+
+        <button class="login" bindtap="finish">完成</button>
+      </view>
+    </swiper-item>
+  </swiper>
+
+
+</view>

@@ -1,0 +1,23 @@
+<!--pages/indexPage/indexPage.wxml-->
+<view class="container" style="height:{{windowHeight}}px;">
+
+<view class="circleBox">
+  <view class="text02" style="margin-top:{{203+topBarHeight*px2rpx+20}}rpx">圈圈带学</view>
+</view>
+
+<scroll-view class="scroll-view_H" scroll-x scroll-with-animation style="width: 100%;height:350rpx;margin-top:{{topBarHeight*px2rpx+112}}rpx;" bindscroll="getSelectItem">
+  <block wx:for="{{proList}}" wx:key="unique" wx:for-index="id" wx:for-item="item">
+    <view class="scroll_item {{item.selected?'selected' : ''}}" data-index='{{item.index}}' bindtap='selectProItem'>
+      <image style="width:525rpx;height:250rpx;" src='{{recommendList[id].image}}'/>
+    </view>
+  </block>
+</scroll-view>
+
+<view class="box01">
+  <view  wx:for="{{mainContent}}" class="box02" id="{{index}}" bindtap="turnToPage">
+    <image class="img" src="{{item.image}}"></image>
+    <text class="text01">{{item.text}}</text>
+  </view>
+</view>
+
+</view>

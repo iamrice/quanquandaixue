@@ -1,0 +1,116 @@
+<!--pages/CourseDetail/CourseDetail.wxml-->
+<view>
+
+  <view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+    <view class="text07" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">学霸帮帮</view>
+  </view>
+
+  <view class="searchBox" style="margin-top:{{40}}rpx">
+    <image class="searchIcon" src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/sousuo.png" />
+    <input style="margin:10rpx 20rpx;" type="text" adjust-position="false" placeholder="你想寻找什么课程" />
+  </view>
+
+  <view class="tagBox">
+    <view wx:for="{{['课程','求学']}}" class="tag" bindtap="tagChange" id="{{index}}">
+      <view class="tag" style="font-weight:{{selectedTag==index?'bold':'normal'}};">{{item}}
+        <view wx:if="{{selectedTag==index}}" class="line" />
+      </view>
+    </view>
+  </view>
+
+  <swiper bindchange="swiperChange" current="{{selectedTag}}" style="height:{{windowHeight*px2rpx-(topBarHeight*px2rpx+90)-236}}rpx;">
+    <swiper-item>
+      
+      <scroll-view scroll-y="true" style="height:{{windowHeight*px2rpx-(topBarHeight*px2rpx+90)-236}}rpx;background:linear-gradient(white,rgb(243, 243, 243));">
+      <view class="turnPageBox" bindtap="turnPage" id="/pages/CourseRelease/CourseRelease">
+        <view style="width:450rpx">
+          <view class="text03">发布课程</view>
+          <view class="text04">如果你有一技之长，可以发布课程，为他人提供帮助</view>
+        </view>
+        <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/toRight.png" class="icon01"></image>
+      </view>
+      <view wx:for="{{courseList}}" bindtap="courseClicked" id="{{index}}">
+        <view class="rectangleBlock">
+          <view class="avatarBox">
+            <image src="{{item.personInfo.avatarUrl}}" class="smallImageBlock"></image>
+            <text class="text05">{{item.personInfo.nickName}}</text>
+          </view>
+        </view>
+        <view class="threeBox">
+          <view class="singleBox.first">
+            <text class="text01">科目\n</text>
+            <text class="text02">{{item.courseData.courseName}}</text>
+          </view>
+          <view class="line2" />
+          <view class="singleBox">
+            <text class="text01">价格\n</text>
+            <view wx:if="{{item.courseData.priceNum}}">
+              <text class="text02">{{item.courseData.priceNum}}</text>
+              <text class="text01">{{item.courseData.priceUnit}}</text>
+            </view>
+            <view wx:else>
+              <text class="text01">{{item.courseData.price}}</text>
+            </view>
+          </view>
+          <view class="line2" />
+          <view class="singleBox">
+            <text class="text01">学霸\n</text>
+            <text class="text02">{{item.personInfo.name}}</text>
+          </view>
+        </view>
+      </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <view style="margin-top:50rpx;text-align:center;font-size:30rpx;color:grey;">暂未开放</view>
+    </swiper-item>
+  </swiper>
+
+  <!--view class="turnPageBox" bindtap="turnPage" id="/pages/CourseRelease/CourseRelease">
+
+    <view style="width:450rpx">
+      <view class="text03">发布课程</view>
+      <view class="text04">如果你有一技之长，可以发布课程，为他人提供帮助</view>
+    </view>
+    <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/toRight.png" class="icon01"></image>
+
+  <!--scroll-view class="scroll-view_H" scroll-x scroll-with-animation style="width: 100%;height:350rpx;" bindscroll="getSelectItem">
+  <block wx:for="{{proList}}" wx:key="unique" wx:for-index="id" wx:for-item="item">
+    <view class="scroll_item {{item.selected?'selected' : ''}}" data-index='{{item.index}}' bindtap='selectProItem'>
+      <image style="width:525rpx;height:250rpx;" src='{{recommendList[id].image}}'/>
+    </view>
+  </block>
+</scroll-view-->
+
+  <!--view wx:for="{{courseList}}" bindtap="courseClicked" id="{{index}}">
+    <view class="rectangleBlock">
+      <view class="avatarBox">
+        <image src="{{item.personInfo.avatarUrl}}" class="smallImageBlock"></image>
+        <text class="text05">{{item.personInfo.nickName}}</text>
+      </view>
+    </view>
+    <view class="threeBox">
+      <view class="singleBox.first">
+        <text class="text01">科目\n</text>
+        <text class="text02">{{item.courseData.courseName}}</text>
+      </view>
+      <view class="line2" />
+      <view class="singleBox">
+        <text class="text01">价格\n</text>
+        <view wx:if="{{item.courseData.priceNum}}">
+          <text class="text02">{{item.courseData.priceNum}}</text>
+          <text class="text01">{{item.courseData.priceUnit}}</text>
+        </view>
+        <view wx:else>
+          <text class="text01">{{item.courseData.price}}</text>
+        </view>
+      </view>
+      <view class="line2" />
+      <view class="singleBox">
+        <text class="text01">学霸\n</text>
+        <text class="text02">{{item.personInfo.name}}</text>
+      </view>
+    </view>
+  </view-->
+
+</view>

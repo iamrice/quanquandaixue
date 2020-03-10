@@ -1,0 +1,37 @@
+<view class="container">
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">资料详情</view>
+</view>
+<view class="file-hd">
+            <view class="file-hd-bg" style="background-image: url({{filmDetail.images.large}})"></view>
+            <image src="{{img}}" class="file-cover"></image>
+            <view class="file-intro">
+                <view class="file-title">{{name}}</view>
+                <view class="file-intro-txt">上传人：小脑虎</view>
+                <view class="file-intro-txt">学校：{{school}}</view>
+                <view class="file-intro-txt">上传时间：{{date}}</view>
+            </view>
+        </view>
+        <view class="file-data">
+            <view class="file-data-item" bindtap="downloadFile">
+                <view class="file-data-title">下载</view>
+            </view>
+            <view class="file-data-item">
+                <view class="file-data-title">评论</view>
+            </view>
+            <view class="file-data-item">
+                <view class="file-data-title">联系上传者</view>
+            </view>
+        </view>
+        <view class="file-bd">
+            <view class="file-bd-title">简介</view>
+            <view class="file-bd-intro">{{intro}}</view>
+            <view class="file-bd-title">标签</view>
+            <view class="file-bd-tag">
+                <block>
+                    <view class="file-bd-tag-item" data-tag="{{filmDetailTagItem}}" catchtap="viewFilmByTag">{{tag}}</view>
+                </block>
+            </view>
+            <view class="file-bd-title">评论</view>
+        </view>
+</view>

@@ -1,0 +1,54 @@
+ <!--pages/mine/mine.wxml-->
+<view class="topBox" style="height:{{topBarHeight*px2rpx+470}}rpx">
+  <view class="text06" style="padding-top:{{topBarHeight*px2rpx+24}}rpx"  bindtap="turnBack">个人中心</view>
+  <view class="imageBox">
+    <image class="imageStyle" wx:if="{{hasUserInfo}}" src="{{userInfo.avatarUrl}}"></image>
+    <image class="imageStyle" wx:else src='cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/wode.png'/>
+  </view>
+  <view class="nicknameBox">
+    <view wx:if="{{hasUserInfo}}" class="text01">
+      <text >{{userInfo.nickName}}</text>
+      <text wx:if="{{userInfo.studentCheck}}" class="button01">华南理工大学</text>
+      <text wx:else class="button01" bindtap="turnPage" id="/pages/register/register">尚未认证</text>
+    </view>
+    <button wx:else class="text05" bindtap="register" open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+      <text>一键注册</text>
+    </button>
+  </view>
+
+  <view class="tagBox">
+  <view wx:for="{{['课程','问答','刷题']}}" class="tag" bindtap="tagChange" id="{{index}}">
+    <view class="tag" style="font-weight:{{selectedTag==index?'bold':'normal'}};">{{item}}
+    <view wx:if="{{selectedTag==index}}" class="line"/>
+    </view>
+  </view>
+  </view>
+
+</view>
+
+<swiper bindchange="swiperChange" current="{{selectedTag}}" style="height:500rpx;">
+  <!--swiper-item>
+    <view class="tagBox">
+      <view wx:for="{{['已收藏','已购买','已发布']}}" class="tag" bindtap="tagChange2" id="{{index}}">
+        <view class="tag" style="color:black;font-weight:{{selectedTag2==index?'bold':'normal'}};">{{item}}
+        <view wx:if="{{selectedTag2==index}}" class="line2"/>
+        </view>
+      </view>
+    </view>
+  </swiper-item-->
+  <swiper-item>
+    <!--view class="text02">我发布的课程</view>
+    <view class="text02">我购买的课程</view>
+    <view class="text02">我关注的课程</view-->
+    
+    <view class="text04">空</view>
+    <!--image class="addType" style="width:50rpx;height:50rpx;" src="/../../images/jia-.png"></image>
+    <view class="text03">发布你的第一个课程吧！</view-->
+  </swiper-item>
+  <swiper-item>
+    <view class="text04">空</view>
+  </swiper-item>
+  <swiper-item>    
+    <view class="text04">空</view>
+  </swiper-item>
+</swiper>

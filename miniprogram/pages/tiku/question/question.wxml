@@ -1,0 +1,61 @@
+<view class="container">
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
+</view>
+  <view  wx:if="{{type!='填空'}}">
+  <!-- 问题 -->
+  <view class="question">{{question.question}}</view>
+  <!-- 单选题 -->
+  <view class="options" wx:if="{{type=='单选'}}">
+  <!-- 选项 -->
+    <view wx:key="option" wx:for-item="{{question.A}}">
+      <button animation="{{wrongid=='A'?animationData:''}}" type="{{rightid=='A'?'primary':''}}" class="option" bindtap='selectAnswer' data-id="A" disabled='{{disable}}'>A.{{question.A}}. </button>
+    </view>
+    <view wx:key="option" wx:for-item="{{question.B}}">
+      <button animation="{{wrongid=='B'?animationData:''}}" type="{{rightid=='B'?'primary':''}}" class="option" bindtap='selectAnswer' data-id="B" disabled='{{disable}}'>B.{{question.B}}. </button>
+    </view>
+    <view wx:key="option" wx:for-item="{{question.C}}">
+      <button animation="{{wrongid=='C'?animationData:''}}" type="{{rightid=='C'?'primary':''}}" class="option" bindtap='selectAnswer' data-id="C" disabled='{{disable}}'>C.{{question.C}}. </button>
+    </view>
+    <view wx:key="option" wx:for-item="{{question.D}}">
+      <button animation="{{wrongid=='D'?animationData:''}}" type="{{rightid=='D'?'primary':''}}" class="option" bindtap='selectAnswer' data-id="D" disabled='{{disable}}'>D.{{question.D}}. </button>
+    </view>
+  </view>
+
+  <!-- 多选题 -->
+  <view class="options" wx:if="{{type=='多选'}}">
+    <button class="option {{item.isSelect?'selected':''}}" wx:for="{{applyList}}" wx:key="" bindtap='selectApply'  data-index='{{index}}'>{{item.answer}}
+    </button>
+    <button class="confirm" bindtap="selectMoreAnswers">确定</button>
+  </view>
+
+  <!-- 判断题 -->
+  <view class="options" wx:if="{{type=='判断'}}">
+  <!-- 选项 -->
+    <view wx:key="option">
+      <button animation="{{wrongid=='正确'?animationData:''}}" type="{{rightid=='正确'?'primary':''}}" class="option" bindtap='selectAnswer' data-id="正确" disabled='{{disable}}'>正确</button>
+    </view>
+    <view wx:key="option">
+      <button animation="{{wrongid=='错误'?animationData:''}}" type="{{rightid=='错误'?'primary':''}}" class="option" bindtap='selectAnswer' data-id="错误" disabled='{{disable}}'>错误</button>
+    </view>
+  </view>
+  </view>
+
+  <!-- 填空题 -->
+  <view wx:if="{{type=='填空'}}">
+    <view class="question">{{question.question1}}____{{question.question2}}</view>
+  <view class="option">
+    <textarea value="{{Ans}}" placeholder="请输入答案"bindinput="funInputAns"></textarea>
+  </view>
+  <button class="confirm" bindtap="inputAnswer">确定</button>
+  </view>
+  
+   <view class="favorate" bindtap="addFavorite">
+    <view wx:if="{{favorite}}"><image class="icon" src="../../../images/bottomIcon/heart.png"></image></view>
+    <view wx:else><image class="icon" src="../../../images/bottomIcon/heart_none.png"></image></view>
+  </view> 
+  <view class="footer">
+    <button id="btnPrevious" class="btn" bindtap='previousQuestion'>上一题</button>
+    <button id="btnNext" class="btn" bindtap='nextQuestion' loading="{{pending}}">下一题</button>
+  </view>
+</view>

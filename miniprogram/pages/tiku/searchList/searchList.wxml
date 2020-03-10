@@ -1,0 +1,26 @@
+<view class="container">
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
+</view>
+<!--搜索输入框-->
+    <view class="search-btn">
+     <input type="text" bindinput="searchInputEvent"  placeholder="输入内容" value="{{searchText}}"></input>
+      <icon bindtap="searchClickEvent"  type="search" size="20"/>
+     </view>
+    <scroll-view scroll-y="true" style="height: {{windowHeight}}rpx" bindscroll="scroll" bindscrolltolower="scrolltolower">
+      <view class="logo" wx:if="{{!loadingMore && totalRecord == 0 && !isInit}}">
+        <icon type="cancel" color="#B0AAAA" size="50" />
+        <view><text>没有找到相关题库</text></view>
+      </view>
+      <view class="header" wx:if="{{totalRecord > 0 && !isInit}}">
+      <text>查找到{{totalRecord}}个相关题库</text>
+      </view>
+        <view class="resource" wx:if="{{totalRecord > 0}}">
+          <block wx:for="{{pageData}}">
+                <view class="resource-item" data-item="{{item.collection}}" catchtap="viewResourceDetail" >
+                  <view class="resource-title">{{item.subject}}</view>
+                </view>
+          </block>
+        </view>
+    </scroll-view>
+</view>

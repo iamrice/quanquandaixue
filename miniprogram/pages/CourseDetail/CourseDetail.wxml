@@ -1,0 +1,92 @@
+<!--pages/CourseDetail/CourseDetail.wxml
+封面
+科目 价格 学霸
+课程详情
+学霸信息
+评价（查看此学霸的更多评价)
+-->
+<view class="container">
+<!--view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+  <view class="text03" style="padding-top:{{topBarHeight*px2rpx+24}}rpx"  bindtap="turnBack">课程详情</view>
+</view>
+
+<image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/6c995833ab0a6b5eb8c92a71aefcaf2.png" style="width:750rpx;height:450rpx;"/-->
+
+<view class="topBox" style="height:{{topBarHeight*px2rpx+370}}rpx">
+<view class="text03" style="padding-top:{{topBarHeight*px2rpx+24}}rpx"  bindtap="turnBack">课程详情</view>
+  <view class="imageBox">
+    <image class="imageStyle" src="{{personInfo.avatarUrl}}"></image>
+  </view>
+  <view class="nicknameBox">
+    <view class="text06">
+      <text >{{personInfo.nickName}}</text>
+      <text class="button01">华南理工大学</text>
+    </view>
+  </view>
+</view>
+
+<view class="threeBox">
+  <view class="singleBox.first">
+    <text class="text01">科目\n</text>
+    <text class="text02">{{courseInfo.courseName}}</text>
+  </view>
+  <view class="line"/>
+  <view class="singleBox">
+    <text class="text01">价格\n</text>
+    <view wx:if="{{courseInfo.priceNum}}">
+      <text class="text02">{{courseInfo.priceNum}}</text>
+      <text class="text01">{{courseInfo.priceUnit}}</text>
+    </view>
+    <view wx:else>
+      <text class="text01">{{courseInfo.price}}</text>
+    </view>
+  </view>
+  <view class="line"/>
+  <view class="singleBox">
+    <text class="text01">学霸\n</text>
+    <text class="text02">{{personInfo.name}}</text>
+  </view>
+</view>
+
+<view class="courseDetailBox">
+<text class="text01">课程详情\n</text>
+<text class="text02">·科目：{{courseInfo.courseName}}
+·时间：{{courseInfo.date}}
+·价格：{{courseInfo.price}}
+·疗程：{{courseInfo.time}}
+·备注：{{courseInfo.remark}}
+</text>
+</view>
+
+<view class="courseDetailBox">
+<text class="text01">学霸详情\n</text>
+<text class="text02">·姓名：{{personInfo.name}}
+·综合评价：尚无评价
+·年级：{{personInfo.grade}}
+·专业：{{personInfo.major}}
+</text>
+<text class="text01">了解更多\n</text>
+</view>
+
+<view class="courseDetailBox" style="margin-bottom:{{getConnect?0:135}}rpx;">
+<text class="text01">课程评价\n</text>
+<text class="text02">·学员A：讲的很好
+·学员B：讲的不错
+·学员C：讲的还行
+·学员D：讲的凑合
+</text>
+<text class="text01">了解更多\n</text>
+</view>
+
+<view wx:if="{{getConnect}}" class="courseDetailBox" style="margin-bottom:135rpx;">
+<text class="text01">联系方式\n</text>
+<text class="text02">·电话号码：{{personInfo.phoneNumber}}
+</text>
+</view>
+
+<view class="buttonBox">
+  <button class="button" bindtap="getConnect">获取联系方式</button>
+  <button class="button.right">评价</button>
+</view>
+
+</view>

@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/indexPage/indexPage",
+    "pages/CourseSearch/CourseSearch",
+    "pages/CourseRelease/CourseRelease",
+    "pages/register/register",
+    "pages/mine/mine",
+    "pages/HomePage/HomePage",
+    "pages/CourseDetail/CourseDetail",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/ziliao/ziliao",
+    "pages/ziliao/finddetail/finddetail",
+    "pages/ziliao/searchList/searchList",
+    "pages/tiku/index",
+    "pages/tiku/index/index",
+    "pages/tiku/question/question"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#72add8",
+    "navigationBarTitleText": "圈圈带学",
+    "navigationBarTextStyle": "white",
+    "navigationStyle":"custom"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#8398AA",
+    "list": [
+      {
+        "pagePath": "pages/indexPage/indexPage",
+        "text": "首页",
+        "iconPath":"images/caidan_2.png",
+        "selectedIconPath": "images/caidan.png"
+      },
+      {
+        "pagePath":"pages/mine/mine",
+        "text":"我的",
+        "iconPath":"images/wode_2.png",
+        "selectedIconPath":"images/wode.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

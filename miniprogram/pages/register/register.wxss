@@ -1,0 +1,113 @@
+/* pages/register/register.wxss */
+.container{
+  background: linear-gradient(white,rgb(243, 243, 243));
+  width: 100%;
+}
+.topBox{
+  width:750rpx;
+  background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+}
+.text07{
+  margin-left: 50rpx;
+  font-size: 35rpx;
+  color: white;
+  font-weight: bold;
+}
+/* pages/HomePage/HomePage.wxss */
+.Box01{
+  width: 630rpx;
+  margin:0rpx 60rpx;
+  padding: 10rpx;
+}
+.inputBox{
+  width:590rpx;
+  height:50rpx;
+  margin: 20rpx 0rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 2rpx;
+  box-shadow: 0 0 6px #ccc;
+  font-size: 35rpx;
+}
+.addressPostfix{
+  width: 300rpx;
+  font-size: 35rpx;
+  margin: 10rpx 0rpx;
+  border-left:3rpx dashed  rgb(131, 152, 170);
+  color: gainsboro;
+  padding-left: 10rpx;
+}
+.codeBox.shadow{
+  border-radius: 2rpx;
+  box-shadow: 0 0 6px #ccc;
+  margin: 20rpx 0rpx;
+}
+.inputBox03{
+  width:280rpx;
+  height:50rpx;
+  padding: 10rpx 20rpx;
+  font-size: 35rpx;
+}
+.codeBox{
+  display: flex;
+}
+.inputBox02{
+  width:320rpx;
+  height:50rpx;
+  margin: 20rpx 30rpx 20rpx 0rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 2rpx;
+  box-shadow: 0 0 6px rgb(204, 204, 204);
+  font-size: 35rpx;
+}
+.confirm{
+  background: rgb(131, 152, 170);
+  color: white;
+  font-weight: bold;
+  margin: 16rpx 0rpx;
+  width: 240rpx;
+  height: 78rpx;
+  font-size: 30rpx;
+}
+.login{
+  background: rgb(131, 152, 170);
+  color: white;
+  font-weight: bold;
+  width: 590rpx;
+  height: 90rpx;
+  margin-top: 70rpx;
+}
+.text01{
+  color: rgb(131, 152, 170);
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.text02{
+  font-size: 28rpx;
+  margin-right: 20rpx;
+  margin-top: -5rpx;
+  float:right;
+  color: rgb(153, 153, 153);
+}
+.text03{
+  color: rgb(131, 152, 170);
+  font-size: 65rpx;
+}
+.text04{
+  color: gainsboro;
+  font-size: 45rpx;
+}
+.text05{
+  font-size: 28rpx;
+  color: rgb(131, 152, 170);
+  margin: 10rpx 0rpx;
+}
+.text06{
+  font-size: 28rpx;
+  margin: 10rpx 0rpx;
+  padding: 10rpx 0rpx;
+}
+.switchBox{
+  margin-left:450rpx;
+  
+}

@@ -1,0 +1,98 @@
+<!--pages/HomePage/HomePage.wxml>
+style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);"-->
+<swiper current="{{swiperDot_1}}" style="height:{{windowHeight}}px;">
+  <swiper-item catchtouchmove='catchTouchMove'>
+    <view class="switchBox" style="margin-top:{{(windowHeight*px2rpx/2-350-80)}}rpx;">
+      <text class="text03" bindtap="switch_1" id="0">登录/</text>
+      <text class="text04" bindtap="switch_1" id="1">注册</text>
+    </view>
+    <view class="Box01">
+      <text class="text01" style="margin-left:20rpx;">✉ 邮箱</text>
+      <input class="inputBox" style="margin:20rpx 20rpx;width:550rpx;" bindinput="bindinput" id="loginAddress"></input>
+      
+      <swiper current="{{swiperDot_3}}" style="height:400rpx;">
+        <swiper-item>
+          <text class="text01" style="margin-left:20rpx;">🗝 密码</text>
+          <input password="true" class="inputBox" style="margin:20rpx 20rpx;width:550rpx;" bindinput="bindinput" id="loginPasscode"></input>
+          <view class="text05" style="color:red;" style="margin-left:20rpx;">{{loginTip}}</view>
+          <text class="text02" bindtap="switch_2">邮箱验证码登录</text>
+          <button class="login" bindtap="login">登录</button>
+        </swiper-item>
+        <swiper-item>
+          <text class="text01" type='number' style="margin-left:20rpx;">🗝 验证码</text>
+          <view class="codeBox">
+            <input class="inputBox02" bindinput="codeInput" id="login" style="width:280rpx;margin-left:20rpx;"></input>
+            <button class="confirm" style="background:{{countDown?'gainsboro':''}}" bindtap="{{countDown?'':'sendCode_login'}}">{{countDown?countDown:'发送验证码'}}</button>        
+          </view>    
+          <view style="margin-left:20rpx;" class="text05" style="color:{{codeTipColor}};">{{codeTip}}</view>
+        </swiper-item>
+      </swiper>
+
+      
+
+    </view>
+  </swiper-item>
+  <swiper-item catchtouchmove='catchTouchMove'>
+    <swiper current="{{swiperDot_2}}" vertical="true" style="height:{{windowHeight}}px;">
+      <swiper-item catchtouchmove='catchTouchMove'>
+        <view class="switchBox" style="margin-top:{{(windowHeight*px2rpx/2-350-80)}}rpx;">
+          <text class="text04" bindtap="switch_1" id="0">登录 </text>
+      <text class="text03" bindtap="switch_1" id="1">/注册</text>
+        </view>
+        <view class="Box01">
+          <text class="text01">✉ 邮箱</text>
+          <view class="codeBox.shadow">
+            <input class="inputBox03" bindinput="bindinput" id="address"></input>
+            <view class="addressPostfix">@mail.scut.edu.cn</view>
+          </view>
+          <view class="text05" style="color:red;">{{addressTip}}</view>
+          <view class="text05" bindtap="tipClicked">没有华工邮箱？</view>
+          <view class="text06" bindtap="tipClicked" wx:if="{{tipExpand}}">尊敬的用户，为确保平台交易的安全性，本平台目前只支持华工在校学生注册。<text style="color:rgb(131, 152, 170);">若在校学生没有华工邮箱，请访问"http://stuemail.scut.edu.cn/"，点击“立即激活”，即可激活自己的邮箱。</text>如若有其他问题，请在小程序后台留言，我们会尽快回复。</view>
+
+          <text class="text01" type='number'>🗝 验证码</text>
+          <view class="codeBox">
+            <input class="inputBox02" id="register" bindinput="codeInput"></input>
+            <button class="confirm" style="background:{{countDown?'gainsboro':''}}" bindtap="{{countDown?'':'sendCode'}}">{{countDown?countDown:'发送验证码'}}</button>
+          </view>
+          
+          <view class="text05" style="color:{{codeTipColor}};">{{codeTip}}</view>
+        </view>
+      </swiper-item>
+      <swiper-item catchtouchmove='catchTouchMove'>
+        <view class="Box01" style="margin-top:{{windowHeight*px2rpx/2-350}}rpx">
+          <text class="text01">设置密码</text>
+          <input password="true"  class="inputBox" bindinput="bindinput" id="passcode"></input>
+          
+          <text class="text01">确认密码</text>
+          <input password="true"  class="inputBox" bindinput="confirmPasscode" id="confirmPasscode"></input>
+          <view class="text05" style="color:red;">{{passcodeTip}}</view>
+
+          <button class="login" bindtap="nextStep">下一步</button>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="Box01" style="margin-top:{{(windowHeight*px2rpx/2-500)>0?(windowHeight*px2rpx/2-500):0}}rpx">
+          <text class="text01">😀 真实姓名</text>
+          <input class="inputBox" bindinput="bindinput" id="name"></input>
+          
+          <text class="text01">📱 电话号码</text>
+          <input class="inputBox" bindinput="bindinput" id="phoneNumber"></input>
+
+          <text class="text01">👀 昵称</text>
+          <input class="inputBox" bindinput="bindinput" id="nickname"></input>
+
+          <text class="text01">📚 专业</text>
+          <input class="inputBox" bindinput="bindinput" id="major" placeholder="此处应有年级+专业选择器"></input>
+
+          <button class="login" bindtap="finish">完成</button>
+        </view>
+      </swiper-item>
+    </swiper>
+    
+  </swiper-item>
+  <swiper-item catchtouchmove='catchTouchMove'>
+   
+    <view>我购买的课程</view>
+    <view>我发布的课程</view>
+  </swiper-item>
+</swiper>
