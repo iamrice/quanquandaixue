@@ -1,0 +1,76 @@
+/* pages/CourseRelease/CourseRelease.wxss */
+.container{
+  width: 100%;
+}
+.topBox{
+  width:750rpx;
+  background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+  box-shadow: 0 0 10rpx #ccc;
+  position: fixed;
+  z-index: 1;
+}
+.text04{
+  margin-left: 50rpx;
+  font-size: 35rpx;
+  color: white;
+  font-weight: bold;
+}
+.singleBox{
+  background: white;
+  margin: 15rpx 0rpx;
+  padding: 10rpx 75rpx 20rpx 75rpx;
+}
+.arrow{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 45rpx 20rpx;
+}
+.icon{
+  width:80rpx;
+  height: 80rpx;
+  margin:35rpx 10rpx 35rpx 100rpx;
+}
+.text03{
+  font-size: 35rpx;
+  font-weight: bold;
+  margin: 30rpx 10rpx;
+}
+.button01{
+  display: flex;
+  width: 600rpx;
+  height: 150rpx;
+  margin: 50rpx 75rpx 0rpx 75rpx;
+  padding: 0rpx 10rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10px #ccc;
+  text-align: left;
+}
+button02{
+  display: flex;
+  width: 600rpx;
+  height: 150rpx;
+  margin: 50rpx 75rpx 0rpx 75rpx;
+  padding: 0rpx 10rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10px #ccc;
+  text-align: left;
+}
+.text01{
+  font-size: 30rpx; 
+  font-weight: bolder;
+}
+.text02{
+  font-size: 35rpx;
+  color: gray;
+}
+.inputBox{
+  width: 560rpx;
+  margin: 5rpx 0rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 2rpx;
+  box-shadow: 0 0 3px #ccc;
+  font-size: 35rpx;
+}
+.inputBox.big{
+  height: 120rpx;
+}

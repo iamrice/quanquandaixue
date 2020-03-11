@@ -56,6 +56,14 @@
   color: white;
   display: flex;
 }
+.turnPageBox2{
+  width: 550rpx;
+  background: linear-gradient(80deg ,#72add8, rgb(231, 156, 238));
+  padding: 30rpx 45rpx;
+  margin: 10rpx 55rpx;
+  color: white;
+  display: flex;
+}
 .text03{
   font-size: 45rpx;
   font-weight: bold;
@@ -97,10 +105,16 @@
   margin-bottom: 30rpx;
 }
 .singleBox{
-  width:250rpx;
+  width:200rpx;
   padding: 20rpx 10rpx 0rpx 10rpx;
   /*border-left: 5rpx solid gray;*/
   text-align: center;
+  background-color: white;
+}
+.singleBox2{
+  width:476rpx;
+  padding: 20rpx 10rpx 0rpx 30rpx;
+  /*border-left: 5rpx solid gray;*/
   background-color: white;
 }
 .line2{
@@ -138,7 +152,11 @@
 }
 .avatarBox{
   display: flex;
-  background: linear-gradient(80deg ,#d6e9f7, rgb(186, 233, 215));
+  background: linear-gradient(80deg ,#d6e9f7, rgb(201, 247, 229));
+}
+.avatarBox2{
+  display: flex;
+  background: linear-gradient(80deg, rgb(225, 229, 250) ,#f6e8fa);
 }
 .scroll-view_H{
     width: 750rpx;

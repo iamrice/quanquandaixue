@@ -93,13 +93,13 @@ Page({
                     duration: 5000,
                     success: function (res) {
                       if (that.data.sourcePage == "qaList") {
-                        wx.navigateTo({
-                          url: '../qaList/qaList'
+                        wx.navigateBack({
+                          delta:1
                         })
                       }
                       else if (that.data.sourcePage =="myQuestion"){
-                        wx.navigateTo({
-                          url: '../myQuestion/myQuestion'
+                        wx.navigateBack({
+                          delta:1
                         })
                       }
                       

@@ -25,6 +25,10 @@ exports.main = async (event, context) => {
         qaAgreeAmount: _.inc(1)
       }
     });
+    console.log({
+      event,
+      agreeAdd,
+      agreeUpdate})
     return {
       event,
       agreeAdd,

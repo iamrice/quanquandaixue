@@ -62,7 +62,36 @@
       </scroll-view>
     </swiper-item>
     <swiper-item>
-      <view style="margin-top:50rpx;text-align:center;font-size:30rpx;color:grey;">暂未开放</view>
+      <!--view style="margin-top:50rpx;text-align:center;font-size:30rpx;color:grey;">暂未开放</view-->
+      <scroll-view scroll-y="true" style="height:{{windowHeight*px2rpx-(topBarHeight*px2rpx+90)-236}}rpx;background:linear-gradient(white,rgb(243, 243, 243));">
+      <view class="turnPageBox2" bindtap="turnPage" id="/pages/SickHelpRelease/SickHelpRelease">
+        <view style="width:450rpx">
+          <view class="text03">发布求学帖</view>
+          <view class="text04">如果你在学习上遇到了困难，可以发布帖子寻找“学霸”</view>
+        </view>
+        <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/toRight.png" class="icon01"></image>
+      </view>
+      <view wx:for="{{sickHelpList}}" bindtap="courseClicked" id="{{index}}">
+        <view class="rectangleBlock">
+          <view class="avatarBox2">
+            <image src="{{item.personInfo.avatarUrl}}" class="smallImageBlock"></image>
+            <text class="text05">{{item.personInfo.nickName}}</text>
+          </view>
+        </view>
+        <view class="threeBox">
+          <view class="singleBox.first">
+            <text class="text01">科目\n</text>
+            <text class="text02">{{item.sickHelpData.courseName}}</text>
+          </view>
+          <view class="line2" />
+          
+          <view class="singleBox2">
+            <text class="text01">需求：</text>
+            <text class="text02">{{item.sickHelpData.need}}</text>
+          </view>
+        </view>
+      </view>
+      </scroll-view>
     </swiper-item>
   </swiper>
 

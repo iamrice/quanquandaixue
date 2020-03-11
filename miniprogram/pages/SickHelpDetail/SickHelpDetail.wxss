@@ -1,0 +1,118 @@
+/* pages/CourseDetail/CourseDetail.wxss */
+.container{
+  background: linear-gradient(white,rgb(243, 243, 243));
+  width: 100%;
+}
+/*.topBox{
+  width:750rpx;
+  background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+}*/
+.button01{
+  border: 2rpx solid white;
+  padding: 0rpx 10rpx;
+  margin: 0rpx 10rpx;
+  font-size: 25rpx;
+}
+.topBox{
+  height: 400rpx;
+  background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+  display: flex;
+  flex-direction: column;
+}
+.imageBox{
+  height: 100rpx;
+  width: 100rpx;
+  padding: 10rpx;
+  border-radius: 50%;
+  margin:60rpx 315rpx 30rpx 315rpx;
+  background-color: white;
+  overflow: hidden;
+}
+.imageStyle{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.nicknameBox{
+  width: 750rpx;
+  align-items: center;
+}
+.text06{
+  text-align: center;
+  font-size: 35rpx;
+  color: white;
+}
+.text03{
+  margin-left: 50rpx;
+  font-size: 35rpx;
+  color: white;
+  font-weight: bold;
+}
+page{
+  background-color: rgb(230, 225, 225);
+}
+.button{
+  margin: 15rpx 50rpx;
+  background-color: rgb(255, 242, 130);
+  border-radius: 30rpx;
+  float: left;
+  width: 300rpx;
+}
+.buttonBox{
+  background: white;
+  margin-top:15rpx;
+  width: 750rpx;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0rpx;
+}
+.button.right{
+  margin-left: 0rpx;
+}
+.courseDetailBox{
+  background: white;
+  margin-top:15rpx;
+  width: 100%;
+  padding-left: 50rpx;
+  padding-top: 30rpx;
+}
+.threeBox{
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  background: white;
+}
+.singleBox{
+  width:250rpx;
+  padding: 20rpx 10rpx 0rpx 10rpx;
+  /*border-left: 5rpx solid gray;*/
+  text-align: center;
+  background-color: white;
+}
+.line{
+  width:2rpx;
+  height:80rpx;
+  background: #87878b;
+  margin-top:35rpx;
+}
+.singleBox.first{
+  border-left: 0rpx;
+}
+.text01{
+  font-size: 30rpx;
+  font-weight: normal;
+  color: rgb(141, 138, 138);
+  line-height: 60rpx;
+}
+.text02{
+  font-size: 18px;
+  font-weight: bold;
+  font-family:'Courier New', Courier, monospace;
+  color: rgb(43, 41, 41);
+}
+.singleBox2{
+  width:476rpx;
+  padding: 20rpx 10rpx 0rpx 30rpx;
+  /*border-left: 5rpx solid gray;*/
+  background-color: white;
+}

@@ -1,0 +1,66 @@
+<!--pages/CourseRelease/CourseRelease.wxml
+ 真实姓名、年级、专业、班级（默认，不可修改）
+ 上课时间
+ 科目（可多选）
+ 价格
+ 课程数量
+ 备注
+ 推广宣传语
+ 封面图
+-->
+<view class="container">
+<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+    <view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
+</view>
+
+<form bindsubmit="submitClicked" style="z-index: 0;margin-top:{{topBarHeight*px2rpx+90+40}}rpx">
+<button class="button01" bindtap="courseInfoClicked">
+  <image wx:if="{{!courseInfoExpand}}" src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/rightArrow.png" class="arrow"></image>
+  <image wx:else src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/downArrow.png" class="arrow"></image>
+  <text class="text03">写下你的需求</text>
+  <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/courseIcon.png" class="icon"></image>
+</button>
+<view wx:if="{{courseInfoExpand}}" class="singleBox">
+  <view>
+    <text class="text02">科目*</text>
+    <input type="text" name='courseName' class="inputBox"></input>
+    <text class="text02">需求*</text>
+    <input type="text" name='need' class="inputBox" placeholder="例：球球帮我辅导一下电路的小信号分析"></input>
+    <text class="text02">辅导时间</text>
+    <input type="text" name='date' class="inputBox" placeholder="例：周二、四下午，周末"></input>
+    <text class="text02">备注</text>
+    <input type="text" name='remark' class="inputBox" placeholder="价格可谈，希望在50-80每节左右"></input>
+  </view>
+</view>
+
+<button class="button01" bindtap="personInfoClicked">
+  <image wx:if="{{!personInfoExpand}}" src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/rightArrow.png" class="arrow"></image>
+  <image wx:else src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/downArrow.png" class="arrow"></image>
+  <text class="text03">确认个人信息</text>
+  <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/gerenxinxi.png" class="icon"></image>
+</button>
+<view wx:if="{{personInfoExpand}}" class="singleBox">
+  <view>
+    <text class="text02">真实姓名</text>
+    <input class="inputBox" value="{{userInfo.name}}" name="name"/>
+    <text class="text02">年级</text>
+    <input class="inputBox" value="{{userInfo.grade}}" name="grade"/>
+    <text class="text02">专业</text>
+    <input class="inputBox" value="{{userInfo.major}}" name="major"/>
+    <text class="text02">电话号码(仅展示给购买课程的用户)</text>
+    <input class="inputBox" value="{{userInfo.phoneNumber}}" name="phoneNumber"/>
+    
+  </view>
+</view>
+
+<button form-type="submit" class="button01" style="margin:80rpx 75rpx 0rpx 75rpx;">
+  <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/upload.png" style="margin-left:250rpx;" class="icon"></image>
+</button>
+
+<!--progress style="margin:0rpx 75rpx;width:600rpx;" wx:if="{{uploadClicked}}" color="#6ab3e7" percent="100" active duration="10" color="blue"></progress-->
+
+</form>
+
+<view class="singleBox"></view>
+
+</view>

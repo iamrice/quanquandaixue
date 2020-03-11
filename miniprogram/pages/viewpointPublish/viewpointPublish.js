@@ -218,13 +218,13 @@ Page({
                     duration: 5000,
                     success: function (res) {
                       if (that.data.sourcePage == "viewpointList") {
-                        wx.navigateTo({
-                          url: '../viewpointList/viewpointList'
+                        wx.navigateBack({
+                          delta:1
                         })
                       }
                       else if (that.data.sourcePage == "myViewpoint") {
-                        wx.navigateTo({
-                          url: '../myViewpoint/myViewpoint'
+                        wx.navigateBack({
+                          delta:1
                         })
                       }
                     }

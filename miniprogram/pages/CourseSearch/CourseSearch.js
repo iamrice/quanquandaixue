@@ -42,7 +42,7 @@ Page({
   },
 
   turnPage:function(e){
-    if (e.currentTarget.id =='/pages/CourseRelease/CourseRelease'){
+    {
       if(!app.globalData.hasUserInfo){
         wx.showModal({
           title: '您尚未注册',
@@ -79,11 +79,6 @@ Page({
         })
       }
     }
-    else{
-      wx.navigateTo({
-        url: e.currentTarget.id,
-      })
-    }
     
   },
 
@@ -112,14 +107,30 @@ Page({
           courseList: res.data
         })
       })
+    db.collection('sickHelpList').get()
+      .then(res => {
+        console.log(res.data)
+        that.setData({
+          sickHelpList: res.data
+        })
+      })
   },
 
   courseClicked:function(event){
     var id=event.currentTarget.id
     console.log('/pages/CourseDetail/CourseDetail?courseID=' + id)
-    wx.navigateTo({
-      url: '/pages/CourseDetail/CourseDetail?courseInfo='+JSON.stringify(this.data.courseList[id]),
-    })
+    if (this.data.selectedTag==0){
+      wx.navigateTo({
+        url: '/pages/CourseDetail/CourseDetail?courseInfo=' + JSON.stringify(this.data.courseList[id]),
+      })
+    }
+    if (this.data.selectedTag == 1) {
+      console.log('/pages/CourseDetail/CourseDetail?courseInfo=' + JSON.stringify(this.data.sickHelpList[id]))
+      wx.navigateTo({
+        url: '/pages/SickHelpDetail/SickHelpDetail?courseInfo=' + JSON.stringify(this.data.sickHelpList[id]),
+      })
+    }
+    
   },
 
   timePickerChange:function(){

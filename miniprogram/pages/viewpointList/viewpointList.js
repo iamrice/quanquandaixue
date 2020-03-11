@@ -1,4 +1,4 @@
-let titleShowList = [];
+let titleShowList = []; 
 const db = wx.cloud.database();
 Page({
 

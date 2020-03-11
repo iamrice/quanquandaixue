@@ -30,7 +30,7 @@ Page({
         })
       }
     })
-    /*wx.cloud.callFunction({
+    wx.cloud.callFunction({
       name: "getOpenid",
       complete: res => {
         console.log(res)
@@ -38,7 +38,7 @@ Page({
           userOpenid: res.result.openid
         })
       }
-    })*/
+    })
   },
 
   inputBind: function (event) {
