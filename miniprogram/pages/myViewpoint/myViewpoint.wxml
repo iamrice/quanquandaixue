@@ -1,0 +1,25 @@
+<view>
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
+</view>
+     <view>
+        <view class="list">
+          <block wx:for='{{vpDataList}}' wx:key="vpId" wx:for-item="item" wx:for-index="id">
+            <view class="listItem" bindtap="toDetail" data-index="{{id}}" wx:for-index="id">
+              <view class="info">
+                <view class="title">{{titleListOnShow[id]}}</view>
+                <view class="amount">{{item.vpAgreeAmount}}点赞  {{item.vpCommentList.length}}评论</view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="none" hidden="{{vpDataList.length}}">
+          <text class="noneText">您没有发表过观点哦，快去发表一个吧</text>
+        </view>
+        <view class="addButton">
+          <button class="publishButton" bindtap="addAlert">
+            <image class='btnImg' src='../../images/pencil.png'></image>
+          </button>
+        </view>
+    </view>
+</view>

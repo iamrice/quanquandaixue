@@ -1,0 +1,10 @@
+<view>
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">提问</view>
+</view>
+  <textarea class="questionInput" placeholder="请输入疑问内容" value="{{inputValue}}" bindinput='inputBind'/>
+</view>
+<button class="publishButton" bindtap="alert">
+    <image class='btnImg' src='../../images/pencil.png'></image>
+    <view>发表</view>
+</button>

@@ -1,0 +1,145 @@
+.topBox{
+width:750rpx;
+background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+box-shadow: 0 0 10rpx #ccc;
+
+z-index: 1;
+}
+.text04{
+margin-left: 50rpx;
+font-size: 35rpx;
+color: white;
+font-weight: bold;
+}
+
+.nav_tab {
+  width: 702rpx;
+  margin: 20rpx auto;
+  height: 100rpx;
+  display: flex;
+  background: #fff;
+  border-radius: 10rpx;
+  flex-direction: row;
+}
+/* 未选中的样式 */
+.common {
+  background: #CCCCCC;
+  line-height: 100rpx;
+  text-align: center;
+  flex: 1;
+  color: #000;
+  font-size: 36rpx;
+  opacity: 0.5;
+}
+/* 选中时的样式 */
+.active {
+  line-height: 100rpx;
+  text-align: center;
+  color: yellowgreen;
+  flex: 1;
+  font-size: 36rpx;
+}
+.list{
+  margin-left:20rpx;
+  margin-right:20rpx; 
+}
+.pushListItem{
+  display: flex;
+  background-color: #FFFFFF;
+  border-bottom:2px solid #E8E8E8;
+}
+.pushListItem .info{
+  flex:1;
+}
+.pushListItem .info .title{
+  font-size:30rpx;
+  font-weight:1000;
+  padding-top: 8rpx;
+  padding-bottom:6rpx;
+  padding-left: 10rpx;
+  padding-right:10rpx;
+}
+.pushListItem .info .digest{
+  font-size:25rpx;
+  color:#888; 
+  padding-top: 6rpx;
+  padding-bottom:8rpx;
+  padding-left: 10rpx;
+  padding-right:10rpx;
+}
+.imageDiv{
+  margin-bottom:8rpx;
+  margin-top:8rpx;
+  width:150rpx;
+  height:150rpx;
+}
+.image{
+  width:150rpx;
+  height:150rpx;
+}
+
+.listItem{ 
+  background-color: #FFFFFF;
+  padding-top: 2vh;
+  padding-left: 30rpx;
+  height: 100%;
+  border-bottom:2px solid #E8E8E8;
+}
+.list .listItem .info{
+  width:100%;
+  height:11vh;
+}
+.list .listItem .info .title{
+  font-size: 32rpx;
+  color:black;
+  padding-bottom: 8rpx;
+  font-weight:bolder;
+  height:6vh;
+}
+.list .listItem .info .amount{
+  float:right;
+  position: relative;
+  padding-right: 20rpx; 
+  padding-bottom: 8rpx;
+  font-size: 28rpx;
+  color:#AAAAAA;
+  height: 4vh;
+}
+.none{
+  background-color: #FFFFFF;
+  width:100%;
+  height:14vh;
+  border-bottom:2px solid #E8E8E8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.none .noneText{
+  font-size: 40rpx;
+  color:black;
+  font-weight:bolder;
+}
+.addButton{
+  position:absolute;
+  width:46px;
+  height:46px;
+  right:2%;
+  bottom: 2%;
+}
+.randButton{
+  position:absolute;
+  width:46px;
+  height:46px;
+  right:2%;
+  bottom: 2%;
+}
+.publishButton{
+  background-color: yellowgreen;
+  color: white;
+  border-radius: 100%;
+}
+.btnImg {
+  width:19px;
+  height:19px;
+}

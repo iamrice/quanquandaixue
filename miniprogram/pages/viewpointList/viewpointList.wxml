@@ -1,0 +1,59 @@
+<view>
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
+</view>
+     <view>
+        <!-- tab框  -->
+        <view class="nav_title">
+          <view class="nav_tab">
+          <!-- 如果选中的下表等于当前的索引，就使用active class名，否则class名为common -->
+            <view wx:for="{{tablist}}" wx:key="list" class="{{selected==index?'active':'common'}}" data-index='{{index}}' bindtap="selected">{{item}}
+            </view>
+          </view>
+          <!-- tab框显示内容 -->
+          <!-- 电台好文 -->
+          <view wx:if="{{selected == 0}}">
+            <view class="list">
+              <block wx:for='{{pushDataList}}' wx:key="_id" wx:for-item="item" wx:for-index="id">
+                <view class="pushListItem" bindtap="toPushDetail" data-index="{{item._id}}" wx:for-index="id">
+                  <view class="info">
+                    <view class="title">{{item.title}}</view>
+                    <view class="digest">{{item.digest}}</view>
+                  </view>
+                  <div class="imageDiv">
+                    <image class="image" mode="aspectFill" src="{{item.image_url}}">
+                    </image>
+                  </div>
+                </view>
+              </block>
+            </view>
+            <view class="randButton">
+              <button class="publishButton" bindtap="randShow">
+                <image class='btnImg' src='../../images/rand.png'></image>
+              </button>
+            </view>
+          </view>
+
+          <!-- 观点分享 -->
+          <view wx:if="{{selected == 1}}">
+            <view class="list">
+              <block wx:for='{{vpDataList}}' wx:key="vpId" wx:for-item="item" wx:for-index="id">
+                <view class="listItem" bindtap="toDetail" data-index="{{id}}" wx:for-index="id">
+                  <view class="info">
+                    <view class="title">{{titleListOnShow[id]}}</view>
+                    <view class="amount">{{item.vpAgreeAmount}}点赞  {{item.vpCommentList.length}}评论</view>
+                  </view>
+                </view>
+              </block>
+            </view>
+            <view class="addButton">
+              <button class="publishButton" bindtap="addAlert">
+                <image class='btnImg' src='../../images/pencil.png'></image>
+              </button>
+            </view>
+          </view>
+
+        </view>
+        
+    </view>
+</view>

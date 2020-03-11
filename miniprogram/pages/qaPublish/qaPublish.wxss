@@ -1,0 +1,43 @@
+.topBox{
+width:750rpx;
+background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+box-shadow: 0 0 10rpx #ccc;
+z-index: 1;
+}
+.text04{
+margin-left: 50rpx;
+font-size: 35rpx;
+color: white;
+font-weight: bold;
+}
+
+.questionInput{
+  width: auto;
+  height:50vh;
+  margin: 20rpx;
+  padding:15rpx 20rpx;
+  border: 2px solid #E0E3DA;
+  border-radius: 20px;
+  font-size:36rpx;
+}
+.publishButton{
+  width: 80%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: yellowgreen;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+.publishButton::after {
+  border-radius: 98rpx;
+  border: 0; 
+}

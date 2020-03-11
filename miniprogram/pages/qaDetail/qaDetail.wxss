@@ -1,0 +1,140 @@
+.topBox{
+width:750rpx;
+background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+box-shadow: 0 0 10rpx #ccc;
+z-index: 1;
+}
+.text04{
+margin-left: 50rpx;
+font-size: 35rpx;
+color: white;
+font-weight: bold;
+}
+
+.detailContainer{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #FFFFFF;
+}
+view {
+  overflow: none;
+}
+.questionContainer{
+  width:100%;
+  height:100%;
+  margin-bottom: 20rpx;
+}
+.userInfoContainer{
+  box-sizing:border-box;
+  display: flex;
+  padding-top:20rpx;
+  padding-bottom: 10rpx; 
+  align-items: center;
+}
+.userInfoContainer .userHeader{
+  flex:0 0 70rpx;
+  width:70rpx;
+  height:70rpx;
+  border-radius:100%;
+  margin-left: 20rpx;
+}
+.userInfoContainer .userName{
+  font-weight: bold;
+  margin-left: 20rpx;
+  line-height: 35rpx;
+  font-size:35rpx;
+  width:auto;
+}
+.userInfoContainer .answerAgreeButton{
+  float:right;
+  margin-right:0rpx;
+}
+.agreeButton{
+  width:300rpx;
+  height:90rpx;
+  font-size:40rpx;
+}
+.agreeImg{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.questionText{
+  font-size: 35rpx;
+  border-radius: 5px;
+  padding:10rpx 20rpx;
+}
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+}
+.answerTitle{
+  height: 8vh;
+  font-size:40rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.answerText{
+  font-size: 35rpx;
+  border-radius: 5px;
+  padding:10rpx 15rpx 20rpx;
+}
+.answerList{
+  width: 100%;
+}
+.listItem{
+  border-bottom: 5rpx solid #E0E3DA;
+}
+.answerInput{
+  height:25vh;
+  width:100%;
+  font-size:36rpx;
+}
+.answerPublish{
+  width: 100%;
+  border-bottom: 5rpx solid #E0E3DA;
+}
+.publishButton{
+  width: 80%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: yellowgreen;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+.publishButton::after {
+  border-radius: 98rpx;
+  border: 0; 
+}
+.answerNone{
+  background-color: #FFFFFF;
+  width:100%;
+  height:14vh;
+  border-bottom:2px solid #E8E8E8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answerNone .noneText{
+  font-size: 40rpx;
+  color:black;
+  font-weight:bolder;
+}

@@ -1,0 +1,47 @@
+<view>
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">问题详情</view>
+</view>
+  <view class="detailContainer">
+    <view class="divLine"></view>
+    <view class="questionContainer">
+      <view class="userInfoContainer">
+        <image src="{{qaData.questionUserAvatarUrl}}" class="userHeader"></image>
+        <text class="userName">{{qaData.questionUserNickName}}</text>
+      </view>
+      <view class="questionText">
+      <text>{{qaData.qaTitle}}</text>
+      </view>
+      <button class="agreeButton" bindtap="agreeAlert"><image class='agreeImg' src='{{agreeImgUrl}}'></image>{{qaData.qaAgreeAmount}}</button>
+    </view>
+    <view class="divLine"></view>
+    <view class="answerTitle">回答</view>
+    <view class="divLine"></view>
+    <view class="answerNone" hidden="{{qaData.qaAnswerList.length}}">
+        <text class="noneText">暂无回答内容，快抢走沙发吧！</text>
+    </view>
+    <view class="answerList">
+      <block wx:for='{{qaData.qaAnswerList}}' wx:key="answerId">
+            <view class="listItem">
+              <view class="userInfoContainer">
+                <image src="{{item.answerUserAvatarUrl}}" class="userHeader"></image>
+                <text class="userName">{{item.answerUserName}}</text>
+                <button class="answerAgreeButton" bindtap="agreeAlertForAnswer" data-item="{{item}}"><image class='agreeImg' src="{{item.ifAgree?'/images/agreeafter.png':'/images/agreebefore.png'}}"></image>{{item.agreeAmount}}</button>
+              </view>
+              <view class="answerText">
+                <text>{{item.answerText}}</text>
+              </view>
+            </view>
+      </block>
+    </view>
+    <view class="answerTitle">发表回答</view>
+    <view class="divLine"></view>
+    <view class="answerPublish">
+      <textarea class="answerInput" placeholder="点击写下你的答案" value="{{inputValue}}" bindinput='inputBind'/>
+    </view>
+    <button class="publishButton" bindtap="alert">
+    <image class='btnImg' src='../../images/pencil.png'></image>
+    <view>发表</view>
+    </button>
+  </view>
+</view>

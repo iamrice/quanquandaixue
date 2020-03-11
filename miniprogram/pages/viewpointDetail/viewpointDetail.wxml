@@ -1,0 +1,49 @@
+<view>
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
+</view>
+  <view class="detailContainer">
+    <view class="divLine"></view>
+    <view class="vpContainer">
+      <view class="vpTitle">
+        <text>{{vpData.vpTitle}}</text>
+      </view>
+      <view class="userInfoContainer">
+        <image src="{{vpData.vpUserAvatarUrl}}" class="userHeader"></image>
+        <text class="userName">{{vpData.vpUserNickName}}</text>
+      </view>
+      <view class="vpText">
+      <rich-text nodes="{{vpData.vpText}}"></rich-text>
+      </view>
+      <button class="agreeButton" bindtap="agreeAlert"><image class='agreeImg' src='{{agreeImgUrl}}'></image>{{vpData.vpAgreeAmount}}</button>
+    </view>
+    <view class="divLine"></view>
+    <view class="commentTitle">评论</view>
+    <view class="divLine"></view>
+    <view class="commentNone" hidden="{{vpData.vpCommentList.length}}">
+        <text class="noneText">暂无评论，快抢走沙发吧！</text>
+    </view>
+    <view class="commentList">
+      <block wx:for='{{vpData.vpCommentList}}' wx:key="commentId" wx:for-item="item">
+            <view class="listItem">
+              <view class="userInfoContainer">
+                <image src="{{item.commentUserAvatarUrl}}" class="userHeader"></image>
+                <text class="userName">{{item.commentUserName}}</text>
+              </view>
+              <view class="commentText">
+                <text>{{item.commentText}}</text>
+              </view>
+            </view>
+      </block>
+    </view>
+    <view class="commentTitle">发表评论</view>
+    <view class="divLine"></view>
+    <view class="commentPublish">
+      <textarea class="commentInput" placeholder="点击写下你的评论" value="{{inputValue}}" bindinput='inputBind'/>
+    </view>
+    <button class="publishButton" bindtap="alert">
+    <image class='btnImg' src='../../images/pencil.png'></image>
+    <view>发表</view>
+    </button>
+  </view>
+</view>

@@ -20,7 +20,17 @@
     "pages/ziliao/searchList/searchList",
     "pages/tiku/index",
     "pages/tiku/index/index",
-    "pages/tiku/question/question"
+    "pages/tiku/question/question",
+    "pages/myAnswer/myAnswer",
+    "pages/myQuestion/myQuestion",
+    "pages/myViewpoint/myViewpoint",
+    "pages/pushDetail/pushDetail",
+    "pages/qaDetail/qaDetail",
+    "pages/qaPublish/qaPublish",
+    "pages/qaList/qaList",
+    "pages/viewpointDetail/viewpointDetail",
+    "pages/viewpointList/viewpointList",
+    "pages/viewpointPublish/viewpointPublish"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -46,13 +46,19 @@ Page({
         pageUrl:'/pages/tiku/index'
       },
       {
-        image: 'cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/xiangfa.png',
-        text: '问答/想法'
-      },
-      {
         image: 'cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/ziliaoku.png',
         text: '资料库',
         pageUrl:'/pages/ziliao/ziliao'
+      },
+      {
+        image: 'cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/wenda.png',
+        text: '问答',
+        pageUrl: '/pages/qaList/qaList'
+      },
+      {
+        image: 'cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/xiangfa.png',
+        text: '想法',
+        pageUrl: '/pages/viewpointList/viewpointList'
       },
       {
         image: 'cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/tuandui.png',

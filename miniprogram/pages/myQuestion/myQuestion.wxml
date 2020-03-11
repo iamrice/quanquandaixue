@@ -1,0 +1,25 @@
+<view>
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
+</view>
+     <view>
+        <view class="list">
+          <block wx:for='{{qaDataList}}' wx:key="qaId" wx:for-item="item" wx:for-index="id">
+            <view class="listItem" bindtap="toDetail" data-index="{{id}}" wx:for-index="id">
+              <view class="info">
+                <view class="title">{{titleListOnShow[id]}}</view>
+                <view class="amount">{{item.qaAgreeAmount}}点赞  {{item.qaAnswerList.length}}回答</view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="none" hidden="{{qaDataList.length}}">
+          <text class="noneText">您没有发布过疑问哦，快去发布一个吧</text>
+        </view>
+        <view class="addButton">
+          <button class="publishButton" bindtap="addAlert">
+            <image class='btnImg' src='../../images/pencil.png'></image>
+          </button>
+        </view>
+    </view>
+</view>

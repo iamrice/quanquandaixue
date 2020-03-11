@@ -1,0 +1,36 @@
+<view>
+	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">问答</view>
+</view>
+     <view>
+        <view class="searchBar">
+            <view class="searchBarForm">
+            <!-- 搜索框 -->
+                <view class="searchBarBox">
+                    <icon class="searchIcon" type="search" size="14"></icon>
+                    <input type="text" confirm-type='search' class="searchBarInput" placeholder="请输入搜索内容" value="{{inputValue}}" bindinput='inputBind'/>
+                </view>
+            </view>
+            <!-- 搜索按钮,调用搜索查询方法 -->
+            <view class="searchBarButton" bindtap='toSearch'>搜索</view>
+        </view>
+        <view class="list">
+          <block wx:for='{{qaDataList}}' wx:key="qaId" wx:for-item="item" wx:for-index="id">
+            <view class="listItem" bindtap="toDetail" data-index="{{id}}" wx:for-index="id">
+              <view class="info">
+                <view class="title">{{titleListOnShow[id]}}</view>
+                <view class="amount">{{item.qaAgreeAmount}}点赞  {{item.qaAnswerList.length}}回答</view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="none" hidden="{{qaDataList.length}}">
+          <text class="noneText">搜索不到结果，换个关键词试试？</text>
+        </view>
+        <view class="addButton">
+          <button class="publishButton" bindtap="addAlert">
+            <image class='btnImg' src='../../images/pencil.png'></image>
+          </button>
+        </view>
+    </view>
+</view>
