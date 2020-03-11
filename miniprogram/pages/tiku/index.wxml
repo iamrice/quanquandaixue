@@ -5,7 +5,7 @@
 </view>
   <!--导航条-->
     
-    <view class="navigation-bar-container {{navigationBarFix}}">
+    <view class="navigation-bar-container {{navigationBarFix}}" style="margin-top:{{topBarHeight*px2rpx+90+36}}rpx">
       <view class="navigation-bar">
         <view class="navigation-bar-item" bindtap="showSearchView">
           <block wx:if="{{showSearchView}}">

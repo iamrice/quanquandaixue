@@ -2,7 +2,7 @@
 	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
 <view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">资料详情</view>
 </view>
-<view class="file-hd">
+<view class="file-hd" style="margin-top:{{topBarHeight*px2rpx+90}}rpx">
             <view class="file-hd-bg" style="background-image: url({{filmDetail.images.large}})"></view>
             <image src="{{img}}" class="file-cover"></image>
             <view class="file-intro">

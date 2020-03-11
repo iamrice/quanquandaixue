@@ -16,7 +16,6 @@ font-weight: bold;
 /*功能导航栏*/
 .navigation-bar-container {
     width: 100%;
-    margin-top: 160rpx;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -128,7 +127,7 @@ font-weight: bold;
 
 /*资料推荐列表展示*/
 .source-recommend-list {
-    width: auto;
+    width: 650rpx;
     height: auto;
 }
 /*资料推荐列表内容展示*/

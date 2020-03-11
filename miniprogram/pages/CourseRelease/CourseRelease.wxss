@@ -68,7 +68,7 @@ button02{
   margin: 5rpx 0rpx;
   padding: 10rpx 20rpx;
   border-radius: 2rpx;
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 3px #ccc;
   font-size: 35rpx;
 }
 .inputBox.big{

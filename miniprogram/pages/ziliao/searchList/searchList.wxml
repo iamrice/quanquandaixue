@@ -4,7 +4,7 @@
 <view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">搜索</view>
 </view>
 <!--搜索输入框-->
-    <view class="search-btn">
+    <view class="search-btn" style="margin-top:{{topBarHeight*px2rpx+90+36}}rpx">
      <input type="text" bindinput="searchInputEvent"  placeholder="输入内容" value="{{searchText}}"></input>
       <icon bindtap="searchClickEvent"  type="search" size="20"/>
      </view>

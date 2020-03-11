@@ -2,6 +2,7 @@
 	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
 	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
 </view>
+  <view style="margin-top:{{topBarHeight*px2rpx+90+36}}rpx">
   <view  wx:if="{{type!='填空'}}">
   <!-- 问题 -->
   <view class="question">{{question.question}}</view>
@@ -58,4 +59,5 @@
     <button id="btnPrevious" class="btn" bindtap='previousQuestion'>上一题</button>
     <button id="btnNext" class="btn" bindtap='nextQuestion' loading="{{pending}}">下一题</button>
   </view>
+</view>
 </view>

@@ -1,7 +1,7 @@
 /**index.wxss**/
 /*功能导航栏*/
 .navigation-bar-container {
-    width: 100%;
+    width: 750rpx;
     margin-top: 0;
     background-color: white;
     display: flex;
@@ -54,7 +54,7 @@
 .search-btn {
     width: auto;
     height: 35px;
-    margin: 60px 10px 10px 10px;
+    margin: 0px 10px 10px 10px;
     border-radius: 5px;
     background-color: whitesmoke;
 

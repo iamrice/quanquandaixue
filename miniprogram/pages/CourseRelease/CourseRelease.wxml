@@ -15,10 +15,10 @@
 
 <form bindsubmit="submitClicked" style="z-index: 0;margin-top:{{topBarHeight*px2rpx+90+40}}rpx">
 <button class="button01" bindtap="courseInfoClicked">
-  <image wx:if="{{!courseInfoExpand}}" src="/../images/rightArrow.png" class="arrow"></image>
-  <image wx:else src="/../images/downArrow.png" class="arrow"></image>
+  <image wx:if="{{!courseInfoExpand}}" src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/rightArrow.png" class="arrow"></image>
+  <image wx:else src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/downArrow.png" class="arrow"></image>
   <text class="text03">填写课程信息</text>
-  <image src="/../images/courseIcon.png" class="icon"></image>
+  <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/courseIcon.png" class="icon"></image>
 </button>
 <view wx:if="{{courseInfoExpand}}" class="singleBox">
   <view>
@@ -38,10 +38,10 @@
 </view>
 
 <button class="button01" bindtap="personInfoClicked">
-  <image wx:if="{{!personInfoExpand}}" src="/../images/rightArrow.png" class="arrow"></image>
-  <image wx:else src="/../images/downArrow.png" class="arrow"></image>
-  <text class="text03">个人信息</text>
-  <image src="/../images/gerenxinxi.png" class="icon"></image>
+  <image wx:if="{{!personInfoExpand}}" src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/rightArrow.png" class="arrow"></image>
+  <image wx:else src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/downArrow.png" class="arrow"></image>
+  <text class="text03">确认个人信息</text>
+  <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/gerenxinxi.png" class="icon"></image>
 </button>
 <view wx:if="{{personInfoExpand}}" class="singleBox">
   <view>
@@ -58,7 +58,7 @@
 </view>
 
 <button form-type="submit" class="button01" style="margin:80rpx 75rpx 0rpx 75rpx;">
-  <image src="/../images/upload.png" style="margin-left:250rpx;" class="icon"></image>
+  <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/upload.png" style="margin-left:250rpx;" class="icon"></image>
 </button>
 
 <!--progress style="margin:0rpx 75rpx;width:600rpx;" wx:if="{{uploadClicked}}" color="#6ab3e7" percent="100" active duration="10" color="blue"></progress-->
