@@ -6,8 +6,7 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-  env: 'appointment-2cbf9b',
-  traceUser: true,
+  env: 'appointment-2cbf9b'
 })
 const db = cloud.database();
 // 云函数入口函数

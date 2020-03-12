@@ -7,7 +7,7 @@
 
   <view class="searchBox" style="margin-top:{{40}}rpx">
     <image class="searchIcon" src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/sousuo.png" />
-    <input style="margin:10rpx 20rpx;" type="text" adjust-position="false" placeholder="你想寻找什么课程" />
+    <input style="margin:10rpx 20rpx;" type="text" bindinput="search" adjust-position="false" placeholder="你想寻找什么课程" />
   </view>
 
   <view class="tagBox">
@@ -29,7 +29,7 @@
         </view>
         <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/toRight.png" class="icon01"></image>
       </view>
-      <view wx:for="{{courseList}}" bindtap="courseClicked" id="{{index}}">
+      <view wx:for="{{key==''?courseList:searchedCourseList}}" bindtap="courseClicked" id="{{index}}">
         <view class="rectangleBlock">
           <view class="avatarBox">
             <image src="{{item.personInfo.avatarUrl}}" class="smallImageBlock"></image>
@@ -71,7 +71,7 @@
         </view>
         <image src="cloud://appointment-2cbf9b.6170-appointment-2cbf9b-1258572356/toRight.png" class="icon01"></image>
       </view>
-      <view wx:for="{{sickHelpList}}" bindtap="courseClicked" id="{{index}}">
+      <view wx:for="{{key==''?sickHelpList:searchedSickHelpList}}" bindtap="courseClicked" id="{{index}}">
         <view class="rectangleBlock">
           <view class="avatarBox2">
             <image src="{{item.personInfo.avatarUrl}}" class="smallImageBlock"></image>
