@@ -192,7 +192,7 @@ Page({
         console.log("res")
         console.log(res)
         wx.cloud.uploadFile({
-          cloudPath: "Sharing/"+res.tempFiles[0].name,
+          cloudPath: res.tempFiles[0].name,
           filePath: res.tempFiles[0].path,
           }).then(res => {
             console.log(res.fileID)
@@ -215,17 +215,17 @@ Page({
   //跳转到详细页面
   viewOneDetail: function (e) {
     wx.navigateTo({
-      url: '../ziliao/finddetail/finddetail?id=1583899566890_0.5411017332472312_16823720'
+      url: '../ziliao/finddetail/finddetail?id=d68532785e3963910a43998c59942266'
     });
   },
   viewTwoDetail: function (e) {
     wx.navigateTo({
-      url: '../ziliao/finddetail/finddetail?id=1583899501456_0.5404626971374225_16828562'
+      url: '../ziliao/finddetail/finddetail?id=d9ea35c25e3922a50a23d5d20b67856b'
     });
   },
   viewThreeDetail: function (e) {
     wx.navigateTo({
-      url: '../ziliao/finddetail/finddetail?id=1583897484332_0.5948575298643308_16819449'
+      url: '../ziliao/finddetail/finddetail?id=74b140b45e3804f709c9e13968812f6a'
     });
   },
 

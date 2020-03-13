@@ -1,6 +1,6 @@
 <view>
 	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
-	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">观点</view>
 </view>
      <view>
         <!-- tab框  -->

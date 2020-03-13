@@ -1,6 +1,6 @@
 <view class="container">
 	<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
-	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">搜索课程</view>
+	<view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">发布课程</view>
 </view>
 <!--搜索输入框-->
     <view class="search-btn" style="margin-top:{{topBarHeight*px2rpx+90+36}}rpx">

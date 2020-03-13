@@ -127,6 +127,16 @@ Page({
       url: '../tiku/index/index?collection=jiwang'
     });
   },
+  viewTwoDetail: function (e) {
+    wx.navigateTo({
+      url: '../tiku/index/index?collection=shujuku'
+    });
+  },
+  viewThreeDetail: function (e) {
+    wx.navigateTo({
+      url: '../tiku/index/index?collection=yiying'
+    });
+  },
 
   //选择单元
   bindUnitChange: function (e) {

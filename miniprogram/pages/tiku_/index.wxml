@@ -16,14 +16,14 @@
           </block>
         </view>
 
-        <!-- <view class="navigation-bar-item" bindtap="showUploadView">
+        <view class="navigation-bar-item" bindtap="showUploadView">
           <block wx:if="{{showUploadView}}">
             <text style="color: black">添加</text>
           </block>
           <block wx:else>
             <text>添加</text>
           </block>
-        </view> -->
+        </view>
       </view>
 
       <!--标识出当前选择的选项卡 默认为搜索-->
@@ -43,7 +43,7 @@
          <view class="source-recommend-list-item" catchtap="viewOneDetail">
           <!--封面-->
           <view class="project-cover-img">
-            <image src="/images/bottomIcon/jiwang.png"></image>
+            <image src="/images/bottomIcon/tiku.png"></image>
           </view>
 
          <!--信息-->
@@ -51,31 +51,9 @@
           <view class="project-name">计算机网络</view>
          </view>
          </view>
-         <view class="source-recommend-list-item" catchtap="viewTwoDetail">
-          <!--封面-->
-          <view class="project-cover-img">
-            <image src="/images/bottomIcon/shujuku.png"></image>
-          </view>
-
-         <!--信息-->
-         <view class="project-base-info" style="width: {{projectBaseInfoWidth}}px">
-          <view class="project-name">数据库</view>
-         </view>
-         </view>
-         <view class="source-recommend-list-item" catchtap="viewThreeDetail">
-          <!--封面-->
-          <view class="project-cover-img">
-            <image src="/images/bottomIcon/yingyu.png"></image>
-          </view>
-
-         <!--信息-->
-         <view class="project-base-info" style="width: {{projectBaseInfoWidth}}px">
-          <view class="project-name">医学英语单词</view>
-         </view>
-         </view>
         </view>
     </block>
-    <!-- <block wx:if="{{showUploadView}}">
+    <block wx:if="{{showUploadView}}">
      <view class="Detail">
       <form bindsubmit="registerFormSubmit" report-submit="{{true}}">
         <view class="pickerView">
@@ -127,5 +105,5 @@
   </form>
   </view>
 
-    </block> -->
+    </block>
 </view>

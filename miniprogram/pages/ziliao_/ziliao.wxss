@@ -1,21 +1,8 @@
 /**index.wxss**/
-.topBox{
-width:750rpx;
-background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
-box-shadow: 0 0 10rpx #ccc;
-position: fixed;
-z-index: 1;
-}
-.text04{
-margin-left: 50rpx;
-font-size: 35rpx;
-color: white;
-font-weight: bold;
-}
-
 /*功能导航栏*/
 .navigation-bar-container {
-    width: 100%;
+    width: 750rpx;
+    margin-top: 0;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -66,9 +53,8 @@ font-weight: bold;
 /*搜索按钮*/
 .search-btn {
     width: auto;
-    margin-top: 0;
     height: 35px;
-    margin: 10px;
+    margin: 0px 10px 10px 10px;
     border-radius: 5px;
     background-color: whitesmoke;
 
@@ -93,7 +79,7 @@ font-weight: bold;
 }
 /*搜索类型标签*/
 .serach-project-type {
-    width: auto;
+    width: 650rpx;
     height: auto;
     margin: 10px 10px 5px 10px;
 
@@ -105,7 +91,7 @@ font-weight: bold;
 }
 
 .serach-project-type-item {
-    width: 20%;
+    width: 130rpx;
     height: auto;
     margin-bottom: 10px;
 
@@ -127,7 +113,7 @@ font-weight: bold;
 
 /*资料推荐列表展示*/
 .source-recommend-list {
-    width: 650rpx;
+    width: 750rpx;
     height: auto;
 }
 /*资料推荐列表内容展示*/
@@ -289,7 +275,7 @@ font-weight: bold;
   position: fixed; 
   bottom: 0; 
   width: 100%;
-  /* padding: 5px; */
+  padding: 5px;
   background-color: #fff;
 }
 .saveBtn {
@@ -308,4 +294,17 @@ font-weight: bold;
 .place-holder {
     font-size: 12px;
     text-align: center;
+}
+.topBox{
+  width:750rpx;
+  background:linear-gradient(80deg ,#72add8, rgb(151, 238, 234));
+  box-shadow: 0 0 10rpx #ccc;
+  position: fixed;
+  z-index: 1;
+}
+.text04{
+  margin-left: 50rpx;
+  font-size: 35rpx;
+  color: white;
+  font-weight: bold;
 }

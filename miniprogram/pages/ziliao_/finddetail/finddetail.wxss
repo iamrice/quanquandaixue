@@ -31,7 +31,7 @@ font-weight: bold;
     z-index: 1;
     width: 100%;
     height: 600rpx;
-    background-color: #2E4A62;
+    background-color: rgba(207, 177, 3, 0.6);
 }
 
 .file-hd-bg {

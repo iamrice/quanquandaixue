@@ -16,15 +16,20 @@ Page({
     showSearchView: true, // 控制显示、隐藏搜索页面
     showUploadView: false,   // 控制显示、隐藏历史搜索页面
     id: '',
-    fileID:"",
-    name: '',
-    tag: '',
-    intro: '',
-    school: '',
-    date:'',
-    type: 'PPT',
-    typeArray: ['PPT', 'PDF', 'TXT', 'WORD', '其他'],
+    question: '',
+    answer: 'A',
+    A: '',
+    B: '',
+    C: '',
+    D: '',
+    analysis: '',
+    tag: [],
+    unit: '1',
+    unitArray: ['1：引言', '2：物理层', '3：数据链路层', '4：介质访问控制子层', '5：网络层', '6：传输层', '7：应用层'],
+    uArray: ['1', '2', '3', '4', '5', '6', '7'],
     indexU: 0,
+    choiceArray: ['A', 'B', 'C', 'D'],
+    indexC: 0,
 
     sourceList: [
       // {
@@ -71,41 +76,10 @@ Page({
       showUploadView: true,          // 显示文件上传页面
     });
   },
-
-  // 进入资料搜索页
+  // 进入题库搜索页
   intoSearchProjectPage: function () {
     wx.navigateTo({
       url: 'searchList/searchList'
-    })
-  },
-  // 进入学习资料搜索页
-  searchProjectByXuexi: function () {
-    wx.navigateTo({
-      url: 'searchList/searchList?searchKey=学习'
-    })
-  },
-  // 进入考级考证搜索页
-  searchProjectByKaozheng: function () {
-    wx.navigateTo({
-      url: 'searchList/searchList?searchKey=考级考证'
-    })
-  },
-  // 进入考研资料搜索页
-  searchProjectByKaoyan: function () {
-    wx.navigateTo({
-      url: 'searchList/searchList?searchKey=考研'
-    })
-  },
-  // 进入影音资料搜索页
-  searchProjectByYingyin: function () {
-    wx.navigateTo({
-      url: 'searchList/searchList?searchKey=影音'
-    })
-  },
-  // 进入工具软件搜索页
-  searchProjectByGongju: function () {
-    wx.navigateTo({
-      url: 'searchList/searchList?searchKey=工具软件'
     })
   },
   turnBack: function () {
@@ -113,6 +87,7 @@ Page({
       delta: 1
     })
   },
+
   onLoad: function () {
     this.setData({
       topBarHeight: wx.getSystemInfoSync().statusBarHeight,
@@ -146,125 +121,111 @@ Page({
       })
     }
   },
-  // 文件类型选择
-  bindTypeChange: function (e) {
+  //跳转到详细页面
+  viewOneDetail: function (e) {
+    wx.navigateTo({
+      url: '../tiku/index/index?collection=jiwang'
+    });
+  },
+
+  //选择单元
+  bindUnitChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value,
-      type: this.data.typeArray[e.detail.value]
+      unit: this.data.uArray[e.detail.value]
     })
-    console.log(this.data.type)
+    console.log(this.data.unit)
   },
 
-  // 输入文件名
-  funInputName: function (e) {
+  //选择正确答案
+  bindAnswerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      name: e.detail.value
+      index: e.detail.value,
+      answer: this.data.choiceArray[e.detail.value]
+    })
+    console.log(this.data.answer)
+  },
+
+  //输入题目
+  funInputTitle: function (e) {
+    this.setData({
+      question: e.detail.value
     })
   },
-  // 输入标签
+
+  //输入ABCD各选项
+  funInputA: function (e) {
+    this.setData({
+      A: e.detail.value
+    })
+  },
+  funInputB: function (e) {
+    this.setData({
+      B: e.detail.value
+    })
+  },
+  funInputC: function (e) {
+    this.setData({
+      C: e.detail.value
+    })
+  },
+  funInputD: function (e) {
+    this.setData({
+      D: e.detail.value
+    })
+  },
+
+  //输入解析
+  funInputAnalysis: function (e) {
+    this.setData({
+      analysis: e.detail.value
+    })
+  },
+
+  //输入标签
   funInputTag: function (e) {
     this.setData({
       tag: e.detail.value
     })
   },
-  // 输入文件介绍
-  funInputIntro: function (e) {
-    this.setData({
-      intro: e.detail.value
-    })
-  },
-  // 输入学校
-  funInputSchool: function (e) {
-    this.setData({
-      school: e.detail.value
-    })
-  },
-  
-  //文件上传
-  upLoadFile() {
-    let DATE = util.formatDate(new Date())
-    // 1.从客户端中选择一个文件
-    wx.chooseMessageFile({
-      count:1,
-      success: (res) => {
-        // 2.将文件上传到服务器
-        console.log("res")
-        console.log(res)
-        wx.cloud.uploadFile({
-          cloudPath: "Sharing/"+res.tempFiles[0].name,
-          filePath: res.tempFiles[0].path,
-          }).then(res => {
-            console.log(res.fileID)
-            this.setData({
-              fileID: res.fileID,
-              date:DATE
-            })
-        })
-        wx.showToast({
-          title: '文件上传成功',
-        })
-      },
-      fail: err => {
-        wx.showToast({
-          title: '文件上传失败'
-        })
-      }
-    })
-  },
-  //跳转到详细页面
-  viewOneDetail: function (e) {
-    wx.navigateTo({
-      url: '../ziliao/finddetail/finddetail?id=1583899566890_0.5411017332472312_16823720'
-    });
-  },
-  viewTwoDetail: function (e) {
-    wx.navigateTo({
-      url: '../ziliao/finddetail/finddetail?id=1583899501456_0.5404626971374225_16828562'
-    });
-  },
-  viewThreeDetail: function (e) {
-    wx.navigateTo({
-      url: '../ziliao/finddetail/finddetail?id=1583897484332_0.5948575298643308_16819449'
-    });
-  },
-
-  //提交文件上传表单
   registerFormSubmit: function (e) {
     console.log(this.data)
-    this.addResource()
+    this.addQuestion()
+
   },
 
-  //上传文件
-  addResource: function () {
+  addQuestion: function () {
     console.log("1")
-    if (!(this.data.name == '' || this.intro == "" || this.data.tag == '')) {
-      db.collection('resources').add({
+    if (!(this.data.question == '' || this.data.A == "" || this.data.B == '' || this.data.C == '' || this.data.D == '' || this.data.analysis == '' || this.data.tag == '' || this.data.answer == '' || this.data.unit == '')) {
+      db.collection('questions').add({
         data: {
           //插入时会自动插入_id和_openid
-          name: this.data.name,
+          question: this.data.question,
+          A: this.data.A,
+          B: this.data.B,
+          C: this.data.C,
+          D: this.data.D,
+          analysis: this.data.analysis,
+          answer: this.data.answer,
           tag: this.data.tag,
-          intro: this.data.intro,
-          school: this.data.school,
-          fileID: this.data.fileID,
-          type: this.data.type,
-          date: this.data.date,
-          img: "/images/bottomIcon/" + this.data.type + ".png"
+          unit: this.data.unit,
         },
         success: res => {
           // 在返回结果中会包含新创建的记录的 _id
           wx.showToast({
-            title: '新增文件成功',
+            title: '新增题目成功',
           })
-          console.log('[resources] [新增记录] 成功，记录 _id: ', res._id)
+          console.log('[questions] [新增记录] 成功，记录 _id: ', res._id)
 
         },
         fail: err => {
           wx.showToast({
             icon: 'none',
-            title: '新增文件失败'
+            title: '新增题目失败'
           })
-          console.error('[resources] [新增记录] 失败：', err)
+          console.error('[diary] [新增记录] 失败：', err)
         }
       })
     }
@@ -277,6 +238,10 @@ Page({
     }
   },
 
+  judgeEvent: function () {
+    console.log(this.id)
+    this.addQuestion()
+  },
   /**
        * 生命周期函数--监听页面初次渲染完成
        */

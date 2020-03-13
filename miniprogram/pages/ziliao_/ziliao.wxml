@@ -1,0 +1,196 @@
+ <!--index.wxml-->
+<view class="container">
+  <view class="container">
+<view class="topBox" style="height:{{topBarHeight*px2rpx+90}}rpx">
+    <view class="text04" style="padding-top:{{topBarHeight*px2rpx+24}}rpx" bindtap="turnBack">资料</view>
+</view>
+
+  <!--导航条-->
+    <view class="navigation-bar-container {{navigationBarFix}}" style="margin-top:{{topBarHeight*px2rpx+90+36}}rpx">
+      <view class="navigation-bar">
+        <view class="navigation-bar-item" bindtap="showSearchView">
+          <block wx:if="{{showSearchView}}">
+            <text style="color: black">搜索</text>
+          </block>
+          <block wx:else>
+            <text>搜索</text>
+          </block>
+        </view>
+
+        <view class="navigation-bar-item" bindtap="showUploadView">
+          <block wx:if="{{showUploadView}}">
+            <text style="color: black">上传</text>
+          </block>
+          <block wx:else>
+            <text>上传</text>
+          </block>
+        </view>
+      </view>
+
+      <!--标识出当前选择的选项卡 默认为搜索-->
+      <view class="selected-tab-indicate" animation="{{animation}}">
+      </view>
+
+      <view class="separator-height-1px" style="margin-top: 2px"></view>
+    </view>
+    <block wx:if="{{showSearchView}}">
+     <!--搜索按钮-->
+     <view class="search-btn" bindtap="intoSearchProjectPage">
+       <image src="/images/bottomIcon/search.png"></image>
+         <text>搜索</text>
+     </view>
+     <!--资料类型标签：点击后进入显示对应类型的-->
+        <view class="serach-project-type">
+            <view class="serach-project-type-item" bindtap="searchProjectByXuexi"
+                  data-type="学习">
+                <image src="/images/bottomIcon/xuexi.png">
+                </image>
+                <text>学习</text>
+            </view>
+
+            <view class="serach-project-type-item" bindtap="searchProjectByKaozheng"
+                  data-type="考级考证">
+                <image src="/images/bottomIcon/zhengshu.png"></image>
+                <text>考级考证</text>
+            </view>
+
+            <view class="serach-project-type-item" bindtap="searchProjectByKaoyan"
+                  data-type="考研">
+                <image src="/images/bottomIcon/kaoyan.png"></image>
+                <text>考研</text>
+            </view>
+
+            <view class="serach-project-type-item" bindtap="searchProjectByYingyin"
+                  data-type="影音">
+                <image src="/images/bottomIcon/yingyin.png"></image>
+                <text>影音</text>
+            </view>
+
+            <view class="serach-project-type-item" bindtap="searchProjectByGongju"
+                  data-type="工具软件">
+                <image src="/images/bottomIcon/gongju.png"></image>
+                <text>工具软件</text>
+            </view>
+
+        </view>
+        <!--列表展示-->
+        <view class="source-recommend-list">
+         <view class="source-recommend-list-item" catchtap="viewOneDetail">
+          <!--封面-->
+          <view class="project-cover-img">
+            <image src="/images/bottomIcon/ppt.png"></image>
+          </view>
+
+         <!--信息-->
+         <view class="project-base-info" style="width: {{projectBaseInfoWidth}}px">
+          <view class="project-name">软件及软件工程</view>
+          <view class="tag-info">
+            <view class="school-info">
+                华南理工大学
+            </view>
+            <view class="school-info">
+                2020-02-04
+            </view>
+          </view>
+         </view>
+         </view>
+         <view class="source-recommend-list-item" catchtap="viewTwoDetail">
+         <!--封面-->
+          <view class="project-cover-img">
+            <image src="/images/bottomIcon/pdf.png"></image>
+          </view>
+
+         <!--信息-->
+         <view class="project-base-info" style="width: {{projectBaseInfoWidth}}px">
+          <view class="project-name">Ripple共识协议</view>
+          <view class="tag-info">
+            <view class="school-info">
+                华南理工大学
+            </view>
+            <view class="school-info">
+                2020-02-04
+            </view>
+          </view>
+         </view>
+         </view>
+         <view class="source-recommend-list-item" catchtap="viewThreeDetail">
+         <!--封面-->
+          <view class="project-cover-img">
+            <image src="/images/bottomIcon/word.png"></image>
+          </view>
+
+         <!--信息-->
+         <view class="project-base-info" style="width: {{projectBaseInfoWidth}}px">
+          <view class="project-name">软件工程复习提纲</view>
+          <view class="tag-info">
+            <view class="school-info">
+                华南理工大学
+            </view>
+            <view class="school-info">
+                2020-02-02
+            </view>
+          </view>
+         </view>
+         </view>
+         <view class="source-recommend-list-item">
+         <!--封面-->
+          <view class="project-cover-img">
+            <image src="/images/bottomIcon/ppt.png"></image>
+          </view>
+
+         <!--信息-->
+         <view class="project-base-info" style="width: {{projectBaseInfoWidth}}px">
+          <view class="project-name">Adobe破解版</view>
+          <view class="tag-info">
+            <view class="school-info">
+                秃头程序员
+            </view>
+            <view class="school-info">
+                你给我吧
+            </view>
+          </view>
+         </view>
+         </view>
+        </view>
+    </block>
+    <block wx:if="{{showUploadView}}">
+     <view class="Detail">
+        <form bindsubmit="registerFormSubmit" report-submit="{{true}}">
+        <view class="pickerView">
+          <view class="type-picker">
+            <picker value="{{indexU}}" bindchange="bindTypeChange" range="{{typeArray}}">
+              <view class="picker">
+              <text>文件类型：{{type}}</text>
+              </view>
+            </picker>
+          </view> 
+      </view>
+      <view class="title">
+        <textarea placeholder-class="place-holder" placeholder="请输入文件名," value="{{title}}" bindinput="funInputName"></textarea>
+      </view>
+
+      <view class="upLoadBtn" bindtap="upLoadFile">
+        <image src="/images/bottomIcon/add2.png"></image>
+        <text>添加文件</text>
+      </view>
+
+      <view class="content">
+        <textarea placeholder-class="place-holder" placeholder="请输入文件介绍" value="{{content}}" bindinput="funInputIntro"></textarea>
+      </view>
+      <view class="content">
+        <textarea placeholder-class="place-holder" placeholder="请输入学校" value="{{content}}" bindinput="funInputSchool"></textarea>
+      </view>
+      <view class="content">
+        <textarea placeholder-class="place-holder" placeholder="请输入标签，用/隔开" value="{{content}}" bindinput="funInputTag"></textarea>
+      </view>
+
+      <view class="saveFile">
+        <button class="saveBtn" form-type='submit'>上传文件</button>
+      </view>
+  </form>
+</view>
+
+    </block>
+
+    </view>
+</view>

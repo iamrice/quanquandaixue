@@ -8,7 +8,7 @@
      <input type="text" bindinput="searchInputEvent"  placeholder="输入内容" value="{{searchText}}"></input>
       <icon bindtap="searchClickEvent"  type="search" size="20"/>
      </view>
-    <scroll-view scroll-y="true" style="height: {{windowHeight}}px" bindscroll="scroll" bindscrolltolower="scrolltolower">
+    <scroll-view scroll-y="true" style="height: {{windowHeight}}rpx" bindscroll="scroll" bindscrolltolower="scrolltolower">
       <view class="logo" wx:if="{{!loadingMore && totalRecord == 0 && !isInit}}">
         <icon type="cancel" color="#B0AAAA" size="50" />
         <view><text>没有找到相关资料</text></view>

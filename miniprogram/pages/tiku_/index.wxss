@@ -289,7 +289,7 @@ font-weight: bold;
   position: fixed; 
   bottom: 0; 
   width: 100%;
-  /* padding: 5px; */
+  padding: 5px;
   background-color: #fff;
 }
 .saveBtn {
