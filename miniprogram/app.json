@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/indexPage/indexPage",
+    "pages/myQuestion/myQuestion",
+    "pages/myViewpoint/myViewpoint",
     "pages/CourseSearch/CourseSearch",
     "pages/SickHelpDetail/SickHelpDetail",
     "pages/CourseRelease/CourseRelease",
@@ -24,8 +26,6 @@
     "pages/tiku/index/index",
     "pages/tiku/question/question",
     "pages/myAnswer/myAnswer",
-    "pages/myQuestion/myQuestion",
-    "pages/myViewpoint/myViewpoint",
     "pages/pushDetail/pushDetail",
     "pages/qaDetail/qaDetail",
     "pages/qaPublish/qaPublish",

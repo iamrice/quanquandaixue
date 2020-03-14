@@ -83,6 +83,9 @@ Page({
     })
   },
   insertImage() {
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    console.log("当前时间戳为：" + timestamp);
     const that = this
     wx.chooseImage({
       count: 1,
@@ -91,18 +94,15 @@ Page({
       success: function (res) {
         // 将文件上传到服务器
         wx.cloud.uploadFile({
-          cloudPath: "circle-zyhq1",
+          cloudPath: timestamp+'.png',
           filePath: res.tempFilePaths[0],
         }).then(res => {
           console.log(res.fileID)
-          //获取当前时间戳  
-          var timestamp = Date.parse(new Date());
-          timestamp = timestamp / 1000;
-          console.log("当前时间戳为：" + timestamp); 
+          //获取当前时间戳   
           that.editorCtx.insertImage({
             src: res.fileID,
             data: {
-              id: timestamp,
+              id: timestamp+'.png',
               role: 'god'
             },
             width: '100%',

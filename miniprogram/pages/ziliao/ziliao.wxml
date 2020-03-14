@@ -78,7 +78,7 @@
          <view class="source-recommend-list-item" catchtap="viewOneDetail">
           <!--封面-->
           <view class="project-cover-img">
-            <image src="/images/bottomIcon/ppt.png"></image>
+            <image src="/images/bottomIcon/PPT.png"></image>
           </view>
 
          <!--信息-->
@@ -97,7 +97,7 @@
          <view class="source-recommend-list-item" catchtap="viewTwoDetail">
          <!--封面-->
           <view class="project-cover-img">
-            <image src="/images/bottomIcon/pdf.png"></image>
+            <image src="/images/bottomIcon/PDF.png"></image>
           </view>
 
          <!--信息-->
@@ -116,7 +116,7 @@
          <view class="source-recommend-list-item" catchtap="viewThreeDetail">
          <!--封面-->
           <view class="project-cover-img">
-            <image src="/images/bottomIcon/word.png"></image>
+            <image src="/images/bottomIcon/WORD.png"></image>
           </view>
 
          <!--信息-->
@@ -135,7 +135,7 @@
          <view class="source-recommend-list-item">
          <!--封面-->
           <view class="project-cover-img">
-            <image src="/images/bottomIcon/ppt.png"></image>
+            <image src="/images/bottomIcon/PPT.png"></image>
           </view>
 
          <!--信息-->
